@@ -2,7 +2,7 @@
 // You can write your code in this editor
 
 // This makes the player moves 3 pixels each step 
-move_speed = 3; 
+walk_speed = 3; 
 
 // Stats 
 hp = 100; 
@@ -25,3 +25,5 @@ stamina_regen =1;
 
 
 level_complete = false; 
+
+has_fireball = false;

@@ -2,7 +2,10 @@
   "resourceType": "GMObject",
   "resourceVersion": "1.0",
   "name": "obj_key",
-  "spriteId": null,
+  "spriteId": {
+    "name": "spr_key",
+    "path": "sprites/spr_key/spr_key.yy",
+  },
   "solid": false,
   "visible": true,
   "managed": true,
