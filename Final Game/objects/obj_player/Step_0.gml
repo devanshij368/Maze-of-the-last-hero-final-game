@@ -1,52 +1,57 @@
+// Current speed
+var spd = walk_speed;
+
+// Hold SHIFT to run
+if (keyboard_check(vk_shift))
+{
+    spd = run_speed;
+}
+
 // LEFT
 if (keyboard_check(vk_left))
 {
-    x -= move_speed;
+    x -= spd;
     sprite_index = spr_player_left;
 
-    // Wall collision
     if (place_meeting(x, y, obj_wall))
     {
-        x += move_speed;
+        x += spd;
     }
 }
 
 // RIGHT
 if (keyboard_check(vk_right))
 {
-    x += move_speed;
+    x += spd;
     sprite_index = spr_player_right;
 
-    // Wall collision
     if (place_meeting(x, y, obj_wall))
     {
-        x -= move_speed;
+        x -= spd;
     }
 }
 
 // UP
 if (keyboard_check(vk_up))
 {
-    y -= move_speed;
+    y -= spd;
     sprite_index = spr_player_up;
 
-    // Wall collision
     if (place_meeting(x, y, obj_wall))
     {
-        y += move_speed;
+        y += spd;
     }
 }
 
 // DOWN
 if (keyboard_check(vk_down))
 {
-    y += move_speed;
+    y += spd;
     sprite_index = spr_player_down;
 
-    // Wall collision
     if (place_meeting(x, y, obj_wall))
     {
-        y -= move_speed;
+        y -= spd;
     }
 }
 
@@ -54,4 +59,60 @@ if (keyboard_check(vk_down))
 if (keyboard_check_pressed(ord("E")))
 {
 	instance_create_layer(x + 32, y, "Instances", obj_sword);
+}
+
+
+// Shoot fireball
+
+if (has_fireball)
+{
+    if (keyboard_check_pressed(vk_space))
+    {
+        var fireball;
+
+        fireball = instance_create_layer(x, y, "Instances", obj_fireball);
+
+        // RIGHT
+        if (facing == "right")
+        {
+            fireball.direction = 0;
+        }
+
+        // UP
+        if (facing == "up")
+        {
+            fireball.direction = 90;
+        }
+
+        // LEFT
+        if (facing == "left")
+        {
+            fireball.direction = 180;
+        }
+
+        // DOWN
+        if (facing == "down")
+        {
+            fireball.direction = 270;
+        }
+
+        fireball.speed = 8;
+    }
+}
+
+
+// Check if all enemies are gone 
+if (instance_number(obj_enemy) == 0)
+{
+	level_complete = true; // all enemies are dead 
+}
+
+// Go to next room
+
+if (level_complete)
+{
+    if (keyboard_check_pressed(vk_enter))
+    {
+        room_goto_next();
+    }
 }

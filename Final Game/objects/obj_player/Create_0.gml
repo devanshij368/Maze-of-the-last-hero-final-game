@@ -15,4 +15,13 @@ level = 1;
  
 keys = 0; 
 
+dash_speed = 15;
 
+
+// stamina system 
+stamina = 100; 
+stamina_max = 100; 
+stamina_regen =1;
+
+
+level_complete = false; 
