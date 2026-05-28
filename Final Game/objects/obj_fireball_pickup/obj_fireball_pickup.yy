@@ -2,7 +2,10 @@
   "resourceType": "GMObject",
   "resourceVersion": "1.0",
   "name": "obj_fireball_pickup",
-  "spriteId": null,
+  "spriteId": {
+    "name": "spr_fireball",
+    "path": "sprites/spr_fireball/spr_fireball.yy",
+  },
   "solid": false,
   "visible": true,
   "managed": true,

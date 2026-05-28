@@ -3,10 +3,10 @@
 
 
 // Fireball unlocked?
-has_fireball = false; 
+//has_fireball = false; 
 
 // Facing direction 
-facing = "down";
+//facing = "down";
 
 
 

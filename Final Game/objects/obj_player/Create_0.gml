@@ -25,5 +25,7 @@ stamina_regen =1;
 
 
 level_complete = false; 
-
+// Fireball system 
 has_fireball = false;
+fireball_ammo = 0;
+

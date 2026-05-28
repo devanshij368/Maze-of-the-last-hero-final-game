@@ -65,43 +65,15 @@ if (keyboard_check(vk_down))
 
 
 // Shoot fireball
-
-if (has_fireball)
+if (has_fireball && fireball_ammo > 0)
 {
     if (keyboard_check_pressed(vk_space))
     {
-        var fireball;
+        instance_create_layer(x, y, "Instances", obj_fireball);
 
-        fireball = instance_create_layer(x, y, "Instances", obj_fireball);
-
-        // RIGHT
-        if (facing == "right")
-        {
-            fireball.direction = 0;
-        }
-
-        // UP
-        if (facing == "up")
-        {
-            fireball.direction = 90;
-        }
-
-        // LEFT
-        if (facing == "left")
-        {
-            fireball.direction = 180;
-        }
-
-        // DOWN
-        if (facing == "down")
-        {
-            fireball.direction = 270;
-        }
-
-        fireball.speed = 8;
+        fireball_ammo -= 1;
     }
 }
-
 
 // Check if all enemies are gone 
 if (instance_number(obj_slimeenemy) == 0)
