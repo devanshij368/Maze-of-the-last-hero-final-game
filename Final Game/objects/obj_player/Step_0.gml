@@ -83,10 +83,10 @@ if (instance_number(obj_slimeenemy) == 0)
 
 // Go to next room
 
-if (level_complete)
-{
-    if (keyboard_check_pressed(vk_enter))
-    {
-        room_goto_next();
-    }
-}
+//if (level_complete)
+//{
+   // if (keyboard_check_pressed(vk_enter))
+   // {
+    //    room_goto_next();
+  //  }
+//}
