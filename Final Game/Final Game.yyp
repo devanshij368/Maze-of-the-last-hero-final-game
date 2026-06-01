@@ -5,6 +5,7 @@
   "resources": [
     {"id":{"name":"spr_spike","path":"sprites/spr_spike/spr_spike.yy",},"order":23,},
     {"id":{"name":"spr_fireball","path":"sprites/spr_fireball/spr_fireball.yy",},"order":18,},
+    {"id":{"name":"obj_snaketrap_level1","path":"objects/obj_snaketrap_level1/obj_snaketrap_level1.yy",},"order":12,},
     {"id":{"name":"obj_","path":"objects/obj_/obj_.yy",},"order":10,},
     {"id":{"name":"obj_spike","path":"objects/obj_spike/obj_spike.yy",},"order":6,},
     {"id":{"name":"spr_key","path":"sprites/spr_key/spr_key.yy",},"order":6,},
@@ -24,6 +25,7 @@
     {"id":{"name":"spr_skeletonenemy_left","path":"sprites/spr_skeletonenemy_left/spr_skeletonenemy_left.yy",},"order":16,},
     {"id":{"name":"spr_player_left_fireball","path":"sprites/spr_player_left_fireball/spr_player_left_fireball.yy",},"order":19,},
     {"id":{"name":"spr_playerup","path":"sprites/spr_playerup/spr_playerup.yy",},"order":11,},
+    {"id":{"name":"spr_player_up_fireball","path":"sprites/spr_player_up_fireball/spr_player_up_fireball.yy",},"order":24,},
     {"id":{"name":"spr_player_down_fireball","path":"sprites/spr_player_down_fireball/spr_player_down_fireball.yy",},"order":22,},
     {"id":{"name":"spr_skeletonenemy_down","path":"sprites/spr_skeletonenemy_down/spr_skeletonenemy_down.yy",},"order":14,},
     {"id":{"name":"spr_player_left","path":"sprites/spr_player_left/spr_player_left.yy",},"order":2,},
@@ -36,6 +38,7 @@
     {"id":{"name":"obj_door","path":"objects/obj_door/obj_door.yy",},"order":5,},
     {"id":{"name":"obj_key","path":"objects/obj_key/obj_key.yy",},"order":4,},
     {"id":{"name":"spr_player_down","path":"sprites/spr_player_down/spr_player_down.yy",},"order":1,},
+    {"id":{"name":"obj_checkpoint","path":"objects/obj_checkpoint/obj_checkpoint.yy",},"order":13,},
     {"id":{"name":"obj_player","path":"objects/obj_player/obj_player.yy",},"order":0,},
     {"id":{"name":"spr_player_right_fireball","path":"sprites/spr_player_right_fireball/spr_player_right_fireball.yy",},"order":21,},
     {"id":{"name":"Room1","path":"rooms/Room1/Room1.yy",},"order":0,},

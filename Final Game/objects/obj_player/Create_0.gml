@@ -6,7 +6,16 @@ walk_speed = 3;
 
 // Stats 
 hp = 100; 
+max_hp = 100; 
+shake_timer = 0; 
+hit_cooldown = 0;
 
+respawn_x = x;
+respawn_y = y;
+
+
+// red damage flash when player get hit 
+damage_flash = 0;
 xp = 0;
 
 level = 1; 
@@ -28,4 +37,6 @@ level_complete = false;
 // Fireball system 
 has_fireball = false;
 fireball_ammo = 0;
+
+facing = "down";
 
