@@ -24,6 +24,9 @@ level = 1;
  
 keys = 0; 
 
+// Coins Level 3
+coin_count = 0;
+
 dash_speed = 15;
 
 
@@ -31,6 +34,9 @@ dash_speed = 15;
 stamina = 100; 
 stamina_max = 100; 
 stamina_regen =1;
+// Sword 
+has_sword = false; 
+sword_swings = false;
 
 
 level_complete = false; 

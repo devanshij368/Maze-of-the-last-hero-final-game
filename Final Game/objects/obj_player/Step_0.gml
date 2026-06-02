@@ -2,40 +2,41 @@
 // Current speed
 var spd = walk_speed;
 
-// Hold SHIFT to run
-if (keyboard_check(vk_shift))
-{
-    spd = dash_speed;
-	
-}
+// Left 
 if (keyboard_check(vk_left))
 {
-    x -= spd;
-
-    facing = "left";
-
-    if (has_fireball)
-    {
-        sprite_index = spr_player_left_fireball;
-    }
-    else
-    {
-        sprite_index = spr_player_left;
-    }
-
-    if (place_meeting(x, y, obj_wall))
-    {
-        x += spd;
-    }
+	x -= spd;
+	facing = "left";
+	if (has_sword)
+	{
+		sprite_index = spr_player_left_sword;
+	}
+	else if (has_fireball)
+	{
+		sprite_index = spr_player_left_fireball;
+	}
+	else
+	{
+		sprite_index = spr_player_left;
+	}
+	if (place_meeting(x, y, obj_wall))
+	{
+		x += spd;
+	}
 }
-// RIGHT
+
+// Right 
 if (keyboard_check(vk_right))
 {
     x += spd;
 
     facing = "right";
 
-    if (has_fireball)
+    if (has_sword)
+    {
+        sprite_index = spr_player_right_sword;
+    }
+    else if (has_fireball)
     {
         sprite_index = spr_player_right_fireball;
     }
@@ -49,20 +50,25 @@ if (keyboard_check(vk_right))
         x -= spd;
     }
 }
+
 // UP
 if (keyboard_check(vk_up))
 {
-    y -= spd;
+    x += spd;
 
     facing = "up";
 
-    if (has_fireball)
+    if (has_sword)
+    {
+        sprite_index = spr_player_up_sword;
+    }
+    else if (has_fireball)
     {
         sprite_index = spr_player_up_fireball;
     }
     else
     {
-        sprite_index = spr_player_up_fireball;
+        sprite_index = spr_playerup;
     }
 
     if (place_meeting(x, y, obj_wall))
@@ -71,14 +77,18 @@ if (keyboard_check(vk_up))
     }
 }
 
-// DOWN
+// Down
 if (keyboard_check(vk_down))
 {
     y += spd;
 
     facing = "down";
 
-    if (has_fireball)
+    if (has_sword)
+    {
+        sprite_index = spr_player_down_sword;
+    }
+    else if (has_fireball)
     {
         sprite_index = spr_player_down_fireball;
     }
@@ -101,7 +111,7 @@ if (keyboard_check(vk_down))
 
 
 // Shoot fireball
-// REPLACE THE OLD FIREBALL CODE HERE
+
 if (has_fireball && fireball_ammo > 0)
 {
     if (mouse_check_button_pressed(mb_left))
@@ -131,11 +141,7 @@ if (has_fireball && fireball_ammo > 0)
 }
 
 
-// Check if all enemies are gone 
-if (instance_number(obj_slimeenemy) == 0)
-{
-	level_complete = true; // all enemies are dead 
-}
+
 // Level up system
 if (xp >= 100)
 {
@@ -178,19 +184,8 @@ if (place_meeting(x, y, obj_sword))
         show_message("Sword Collected!");
     }
 }
-// Go to next room
 
-//if (level_complete)
-//{
-   // if (keyboard_check_pressed(vk_enter))
-   // {
-    //    room_goto_next();
-  //  }
-//}
-if (hp <= 0)
-{
-    room_restart();
-}
+
 
 // Sword attack
 if (has_sword)
@@ -207,6 +202,22 @@ if (has_sword)
             }
         }
     }
+}
+
+// Sword destroy 
+if (sword_swings <= 0)
+{
+	has_sword = false;
+	sword_swings = 0;
+	
+}
+if (!has_sword && !has_fireball)
+{
+    // return to normal sprite
+    if (facing == "left") sprite_index = spr_player_left;
+    if (facing == "right") sprite_index = spr_playerright;
+    if (facing == "up") sprite_index = spr_playerup;
+    if (facing == "down") sprite_index = spr_player_down;
 }
 // Complete level 2 
 if (instance_number(obj_slimeenemy) == 0)
