@@ -7,11 +7,11 @@ if (keyboard_check(vk_left))
 {
 	x -= spd;
 	facing = "left";
-	if (has_sword)
-	{
-		sprite_index = spr_player_left_sword;
-	}
-	else if (has_fireball)
+	//if (has_sword)
+	//{
+	//	sprite_index = spr_player_left_sword;
+	//}
+	 if (has_fireball)
 	{
 		sprite_index = spr_player_left_fireball;
 	}
@@ -32,11 +32,11 @@ if (keyboard_check(vk_right))
 
     facing = "right";
 
-    if (has_sword)
-    {
-        sprite_index = spr_player_right_sword;
-    }
-    else if (has_fireball)
+    //if (has_sword)
+    //{
+      //  sprite_index = spr_player_right_sword;
+    //}
+    if (has_fireball)
     {
         sprite_index = spr_player_right_fireball;
     }
@@ -54,15 +54,15 @@ if (keyboard_check(vk_right))
 // UP
 if (keyboard_check(vk_up))
 {
-    x += spd;
+    y -= spd;
 
     facing = "up";
 
-    if (has_sword)
-    {
-        sprite_index = spr_player_up_sword;
-    }
-    else if (has_fireball)
+   // if (has_sword)
+   // {
+   //     sprite_index = spr_player_up_sword;
+   // }
+     if (has_fireball)
     {
         sprite_index = spr_player_up_fireball;
     }
@@ -84,11 +84,11 @@ if (keyboard_check(vk_down))
 
     facing = "down";
 
-    if (has_sword)
-    {
-        sprite_index = spr_player_down_sword;
-    }
-    else if (has_fireball)
+   // if (has_sword)
+   // {
+   //     sprite_index = spr_player_down_sword;
+    //}
+    if (has_fireball)
     {
         sprite_index = spr_player_down_fireball;
     }
