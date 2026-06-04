@@ -19,10 +19,9 @@ if (keyboard_check(vk_left))
     facing = "left";
 
     if (room == Room2 && has_sword)
-        //sprite_index = spr_player_left_sword;
-    //else
-	if (room == Room3 && has_fireball)
-        sprite_index = spr_player_left_fireball;
+       sprite_index = spr_player_left_sword;
+   else if (room == Room3 && has_fireball)
+       sprite_index = spr_player_left_fireball;
     else
         sprite_index = spr_player_left;
 
@@ -36,7 +35,7 @@ if (keyboard_check(vk_right))
     facing = "right";
 
     if (room == Room2 && has_sword)
-       // sprite_index = spr_player_right_sword;
+        sprite_index = spr_player_right_sword;
   else if (room == Room3 && has_fireball)
         sprite_index = spr_player_right_fireball;
     else
@@ -52,10 +51,9 @@ if (keyboard_check(vk_up))
     facing = "up";
 
     if (room == Room2 && has_sword)
-        //sprite_index = spr_player_up_sword;
-    //else
-	if (room == Room3 && has_fireball)
-        sprite_index = spr_player_up_fireball;
+       sprite_index = spr_player_up_sword;
+    else if (room == Room3 && has_fireball)
+       sprite_index = spr_player_up_fireball;
     else
         sprite_index = spr_playerup;
 
@@ -69,9 +67,8 @@ if (keyboard_check(vk_down))
     facing = "down";
 
     if (room == Room2 && has_sword)
-        //sprite_index = spr_player_down_sword;
-    //else
-	if (room == Room3 && has_fireball)
+        sprite_index = spr_player_down_sword;
+    else if (room == Room3 && has_fireball)
         sprite_index = spr_player_down_fireball;
     else
         sprite_index = spr_player_down;
