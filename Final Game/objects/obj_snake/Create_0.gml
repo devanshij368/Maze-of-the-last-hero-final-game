@@ -2,11 +2,10 @@
 // You can write your code in this editor
 
 
-// Countdown timer
-if (message_timer > 0)
-{
-    message_timer -= 1;
-}
+hp = 30;
+
+move_dir = 1;
+move_speed = 1;
 
 
 
