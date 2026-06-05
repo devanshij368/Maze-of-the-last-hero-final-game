@@ -132,11 +132,21 @@ if (room == Room2)
 
 // 5. LEVEL 1 REQUIREMENT
 
+
+// LEVEL 1 CHECK ONLY
+
 if (room == Room1)
 {
-    if (has_key)
+    // KEY WIN CONDITION
+    if (keys_collected >= keys_needed)
     {
         level_complete = true;
+    }
+
+    // GO NEXT ROOM
+    if (level_complete && keyboard_check_pressed(vk_enter))
+    {
+        room_goto_next();
     }
 }
 
@@ -150,22 +160,42 @@ if (hp <= 0)
 }
 
 
-// 7. XP LEVEL UP (GLOBAL)
-
-if (xp >= 100)
+// 7. XP LEVEL UP 
+if (room == Room1)
 {
-    xp = 0;
-    level += 1;
-
-    hp += 20;
-    walk_speed += 0.5;
+    // XP disabled
+}
+else
+{
+    if (xp >= 100)
+    {
+        xp = 0;
+        level += 1;
+        hp += 20;
+        walk_speed += 0.5;
+    }
 }
 
 // 8. Screen Shake
+// SCREEN SHAKE (camera-based)
 if (shake_timer > 0)
 {
     shake_timer -= 1;
 
-    x += random_range(-2, 2);
-    y += random_range(-2, 2);
+    var cam = view_camera[0];
+
+    var xx = camera_get_view_x(cam);
+    var yy = camera_get_view_y(cam);
+
+    camera_set_view_pos(
+        cam,
+        xx + random_range(-3, 3),
+        yy + random_range(-3, 3)
+    );
+}
+// Reduce Cooldown	Level 1
+// reduce cooldown
+if (message_cooldown > 0)
+{
+    message_cooldown -= 1;
 }

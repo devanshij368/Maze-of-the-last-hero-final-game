@@ -1,11 +1,15 @@
-// damage player
+// DAMAGE
 other.hp -= 10;
 
-// screen shake
+// SCREEN SHAKE TRIGGER
 other.shake_timer = 10;
 
-// knockback
+// KNOCKBACK
 if (other.x < x)
+{
     other.x -= 20;
+}
 else
+{
     other.x += 20;
+}

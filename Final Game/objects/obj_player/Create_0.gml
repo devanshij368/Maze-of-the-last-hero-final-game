@@ -23,6 +23,8 @@ xp = 0;
 level = 1;
 level_complete = false;
 
+// Message cooldown level 1
+message_cooldown = 0;
 
 // RESPAWN 
 
@@ -32,8 +34,10 @@ respawn_y = y;
 
 // LEVEL 1 ITEMS
 
-has_key = false;
-keys = 0;
+keys_collected = 0;
+keys_needed = 3;
+
+
 
 // LEVEL 3 ITEMS
 

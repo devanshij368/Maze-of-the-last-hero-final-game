@@ -1,6 +1,16 @@
-/// PLAYER UI (simple version)
+/// PLAYER UI 
 
+// KEY PROGRESS BAR
+draw_set_color(c_black);
+draw_rectangle(20, 200, 220, 220, false);
 
+var bar = (keys_collected / keys_needed) * 200;
+
+draw_set_color(c_yellow);
+draw_rectangle(20, 200, 20 + bar, 220, false);
+
+draw_set_color(c_white);
+draw_text(20, 225, "Keys: " + string(keys_collected) + " / " + string(keys_needed));
 // LOW HP BLINK EFFECT
 
 if (hp <= 30)
