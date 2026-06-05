@@ -1,10 +1,10 @@
 {
   "resourceType": "GMObject",
   "resourceVersion": "1.0",
-  "name": "obj_snake",
+  "name": "obj_snakemoving",
   "spriteId": {
-    "name": "spr_slimeattack",
-    "path": "sprites/spr_slimeattack/spr_slimeattack.yy",
+    "name": "spr_snakebite",
+    "path": "sprites/spr_snakebite/spr_snakebite.yy",
   },
   "solid": false,
   "visible": true,
