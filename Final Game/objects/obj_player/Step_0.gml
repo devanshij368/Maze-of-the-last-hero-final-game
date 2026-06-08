@@ -129,7 +129,14 @@ if (room == Room2)
         }
     }
 }
-
+// Level complete 
+if (room == Room2)
+{
+	if (instance_number(obj_slimeenemy) == 0)
+	{
+		level_complete =  true;
+	}
+}
 // 5. LEVEL 1 REQUIREMENT
 
 
@@ -151,14 +158,10 @@ if (room == Room1)
 }
 
 // 6. DEATH SYSTEM
-
 if (hp <= 0)
 {
-    x = respawn_x;
-    y = respawn_y;
-    hp = max_hp;
+    room_restart();
 }
-
 
 // 7. XP LEVEL UP 
 if (room == Room1)

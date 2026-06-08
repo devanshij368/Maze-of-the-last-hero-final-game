@@ -1,5 +1,32 @@
 /// PLAYER UI 
+// CRYSTAL BAR
 
+draw_set_color(c_black);
+draw_rectangle(20, 240, 220, 260, false);
+
+var crystal_bar =
+    (crystals_collected / crystals_needed) * 200;
+
+draw_set_color(c_aqua);
+
+draw_rectangle(
+    20,
+    240,
+    20 + crystal_bar,
+    260,
+    false
+);
+
+draw_set_color(c_white);
+
+draw_text(
+    20,
+    265,
+    "Crystals: " +
+    string(crystals_collected) +
+    " / " +
+    string(crystals_needed)
+);
 // KEY PROGRESS BAR
 draw_set_color(c_black);
 draw_rectangle(20, 200, 220, 220, false);

@@ -16,6 +16,9 @@ damage_flash = 0;
 shake_timer = 0;
 hit_cooldown = 0;
 
+// Crystal system 
+crystals_collected = 0;
+crystals_needed = 1; 
 
 // LEVEL / XP
 
