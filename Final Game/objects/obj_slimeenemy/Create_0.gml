@@ -1,9 +1,2 @@
-/// @description Insert description here
-// You can write your code in this editor
-
-hp = 30;
-
-
-
-
-
+hp = 50;
+max_hp = 50;

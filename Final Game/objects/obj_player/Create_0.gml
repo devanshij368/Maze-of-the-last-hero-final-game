@@ -61,6 +61,7 @@ stamina_regen = 1;
 has_sword = false;
 sword_swings = 0;   // ❗ FIX: must be number, NOT false
 
+hit_cooldown = 0;
 
 // FIREBALL SYSTEM
 

@@ -1,4 +1,13 @@
-
+// Test platform 
+if (place_meeting(x, y + 1, obj_platform))
+{
+    y = y;
+}
+// Slimeenemy
+if (hit_cooldown > 0)
+{
+	hit_cooldown--;
+}
 // 1. SPEED
 
 var spd = walk_speed;
@@ -117,7 +126,7 @@ if (room == Room2)
             {
                 if (point_distance(x, y, obj_player.x, obj_player.y) < 50)
                 {
-                    hp -= 15;
+                    hp -= 20;
                 }
             }
 
@@ -128,6 +137,22 @@ if (room == Room2)
             }
         }
     }
+}
+if (room == Room2)
+{
+    if (keys_collected >= 10)
+    {
+        room_goto(Room3);
+    }
+}
+if (room == Room1)
+{
+    keys_needed = 3;
+}
+
+if (room == Room2)
+{
+    keys_needed = 10;
 }
 // Level complete 
 if (room == Room2)
@@ -196,4 +221,11 @@ if (shake_timer > 0)
 if (message_cooldown > 0)
 {
     message_cooldown -= 1;
+}
+
+// Level 4 Fall Reset 
+if (y > room_height + 100)
+{
+	x =  respawn_x;
+	y = respawn_y;
 }

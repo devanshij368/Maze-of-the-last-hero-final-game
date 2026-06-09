@@ -1,16 +1,14 @@
-/// @description Insert description here
-// You can write your code in this editor
-
-// Draw enemy normally 
 draw_self();
 
-// Show E if player is close 
-if (point_distance(x, y, obj_player.x, obj_player.y) < 40)
-{
-	draw_text(x, y - 20, "Press E");
-}
+// HP BAR background
+draw_set_color(c_black);
+draw_rectangle(x - 20, y - 30, x + 20, y - 25, false);
 
+// HP BAR fill
+draw_set_color(c_red);
 
+var bar = (hp / max_hp) * 40;
 
+draw_rectangle(x - 20, y - 30, x - 20 + bar, y - 25, false);
 
-
+draw_set_color(c_white);

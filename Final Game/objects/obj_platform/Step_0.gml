@@ -1,22 +1,14 @@
-/// @description Insert description here
-// You can write your code in this editor
-
-// Move platform 
-// * multiplication sign
 x += move_speed * direction;
 
-// Change direction 
-if (x > 600) 
+// bounce back smoothly
+if (x >= start_x + range)
 {
-	direction = -1; // moving right 
+    x = start_x + range;
+    direction = -1;
 }
 
-if (x < 200)
+if (x <= start_x - range)
 {
-	direction = 1; // moving left // negative speed = left 
+    x = start_x - range;
+    direction = 1;
 }
-
-
-
-
-

@@ -1,10 +1,6 @@
-/// @description Insert description here
-// You can write your code in this editor
+move_speed = 0.5;
 
-move_speed = 2;
 direction = 1;
 
-
-
-
-
+start_x = x;
+range = 120;

@@ -6,9 +6,5 @@
 has_sword = false;
 sword_swings = 0;
 
-// Destroy after short time 
-
-alarm[0] = 5;
-
 
 

@@ -1,7 +1,8 @@
-// Enemy death
-if (hp <= 0)
+if (room == Room2)
 {
-    obj_player.xp += 10;
-    instance_destroy();
+    if (hp <= 0)
+    {
+        instance_create_layer(x, y, "Instances", obj_key);
+        instance_destroy();
+    }
 }
-
