@@ -87,18 +87,20 @@ draw_rectangle(20, 90, 20 + stamina * 2, 110, false);
 // text
 draw_text(20, 115, "Stamina");
 
-// LEVEL COMPLETE MESSAGE
-
-if (level_complete)
-{
-    draw_text(250, 200, "LEVEL COMPLETE");
-    draw_text(220, 240, "Press ENTER");
-}
-
-
 
 // PLAYER STATS (top left)
 
 draw_text(20, 20, "HP: " + string(hp));
 draw_text(20, 40, "XP: " + string(xp));
 draw_text(20, 60, "LEVEL: " + string(level));
+
+// Level 3
+// Show coin progress in Level 3
+if (room == Room3)
+{
+    draw_text(
+        20,
+        300,
+        "Coins: " + string(coin_count) + " / " + string(coins_needed)
+    );
+}

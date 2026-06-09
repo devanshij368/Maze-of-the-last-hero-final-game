@@ -45,6 +45,8 @@ keys_needed = 3;
 // LEVEL 3 ITEMS
 
 coin_count = 0;
+coins_needed = 5;
+
 
 
 // STAMINA SYSTEM

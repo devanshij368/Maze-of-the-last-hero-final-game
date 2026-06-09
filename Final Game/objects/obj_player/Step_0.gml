@@ -149,12 +149,7 @@ if (room == Room1)
     {
         level_complete = true;
     }
-
-    // GO NEXT ROOM
-    if (level_complete && keyboard_check_pressed(vk_enter))
-    {
-        room_goto_next();
-    }
+    
 }
 
 // 6. DEATH SYSTEM
