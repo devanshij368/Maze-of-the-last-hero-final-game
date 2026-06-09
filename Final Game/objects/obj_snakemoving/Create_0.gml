@@ -5,7 +5,7 @@
 hp = 30;
 
 move_dir = 1;
-move_speed = 1;
+move_speed = 0.5;
 
 
 

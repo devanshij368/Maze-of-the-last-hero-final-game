@@ -2,6 +2,7 @@
 // You can write your code in this editor
 
 
+
 if (damage_flash > 0)
 {
     draw_set_alpha(0.5);
