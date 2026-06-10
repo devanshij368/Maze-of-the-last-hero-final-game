@@ -94,8 +94,8 @@ if (room == Room3)
     {
         if (mouse_check_button_pressed(mb_left))
         {
-            var target = instance_position(mouse_x, mouse_y, obj_slimeenemy);
-
+            var target = instance_position(mouse_x, mouse_y, obj_skeleton_down);
+		
             if (target != noone)
             {
                 var fb = instance_create_layer(x, y, "Instances", obj_fireball);
@@ -122,13 +122,21 @@ if (room == Room2)
         {
             sword_swings -= 1;
 
-            with (obj_slimeenemy)
+            with (obj_slimeenemylevel2)
             {
                 if (point_distance(x, y, obj_player.x, obj_player.y) < 50)
                 {
                     hp -= 20;
                 }
             }
+			 with (obj_slimeenemyfoodlevel2)
+            {
+                if (point_distance(x, y, obj_player.x, obj_player.y) < 50)
+                {
+                    hp -= 20;
+                }
+            }
+			
 
             if (sword_swings <= 0)
             {
@@ -157,7 +165,15 @@ if (room == Room2)
 // Level complete 
 if (room == Room2)
 {
-	if (instance_number(obj_slimeenemy) == 0)
+	if (instance_number(obj_slimeenemylevel2) == 0)
+	{
+		level_complete =  true;
+	}
+}
+// Level complete 
+if (room == Room2)
+{
+	if (instance_number(obj_slimeenemyfoodlevel2) == 0)
 	{
 		level_complete =  true;
 	}

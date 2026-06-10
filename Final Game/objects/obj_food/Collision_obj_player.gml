@@ -2,7 +2,7 @@
 // You can write your code in this editor
 
 // Heal Players' hp 
-other.hp += 20;
+other.hp += 0.5;
 
 // Don't go over max hp 
 if (other.hp > other.max_hp)

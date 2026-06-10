@@ -1,7 +1,7 @@
 {
   "resourceType": "GMObject",
   "resourceVersion": "1.0",
-  "name": "obj_slimeenemy",
+  "name": "obj_slimeenemyfoodlevel2",
   "spriteId": {
     "name": "spr_slimeattack",
     "path": "sprites/spr_slimeattack/spr_slimeattack.yy",

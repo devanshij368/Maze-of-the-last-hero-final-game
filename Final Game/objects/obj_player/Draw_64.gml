@@ -1,5 +1,5 @@
 /// PLAYER UI 
-// CRYSTAL BAR
+/*// CRYSTAL BAR
 
 draw_set_color(c_black);
 draw_rectangle(20, 240, 220, 260, false);
@@ -26,18 +26,29 @@ draw_text(
     string(crystals_collected) +
     " / " +
     string(crystals_needed)
-);
+);*/
 // KEY PROGRESS BAR
+// KEY PROGRESS BAR (SAFE)
+
+var max_keys = max(1, keys_needed); // prevents divide by 0
+
+// background
 draw_set_color(c_black);
 draw_rectangle(20, 200, 220, 220, false);
 
-var bar = (keys_collected / keys_needed) * 200;
+// clamp keys so bar never breaks
+var clamped_keys = clamp(keys_collected, 0, max_keys);
+
+// fill
+var bar = (clamped_keys / max_keys) * 200;
 
 draw_set_color(c_yellow);
 draw_rectangle(20, 200, 20 + bar, 220, false);
 
+// text
 draw_set_color(c_white);
-draw_text(20, 225, "Keys: " + string(keys_collected) + " / " + string(keys_needed));
+draw_text(20, 225,
+"Keys: " + string(clamped_keys) + " / " + string(max_keys));
 // LOW HP BLINK EFFECT
 
 if (hp <= 30)
@@ -90,9 +101,9 @@ draw_text(20, 115, "Stamina");
 
 // PLAYER STATS (top left)
 
-draw_text(20, 20, "HP: " + string(hp));
-draw_text(20, 40, "XP: " + string(xp));
-draw_text(20, 60, "LEVEL: " + string(level));
+//draw_text(20, 20, "HP: " + string(hp));
+//draw_text(20, 40, "XP: " + string(xp));
+//draw_text(20, 60, "LEVEL: " + string(level));
 
 // Level 3
 // Show coin progress in Level 3
@@ -104,3 +115,4 @@ if (room == Room3)
         "Coins: " + string(coin_count) + " / " + string(coins_needed)
     );
 }
+
