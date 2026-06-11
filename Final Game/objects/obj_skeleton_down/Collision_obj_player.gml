@@ -1,9 +1,6 @@
-/// @description Insert description here
-// You can write your code in this editor
-
-other.hp -= 10;
-other.shake_timer = 10;
-
-
-
-
+if (other.hit_cooldown <= 0)
+{
+    other.hp -= 2;
+    other.hit_cooldown = 60;
+    other.shake_timer = 5;
+}

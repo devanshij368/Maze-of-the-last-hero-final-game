@@ -1,7 +1,7 @@
 // Damage player if cooldown is over
 if (other.hit_cooldown <= 0)
 {
-    other.hp -= 20;
+    other.hp -= 2;
     other.shake_timer = 10;
     other.hit_cooldown = 30;
 

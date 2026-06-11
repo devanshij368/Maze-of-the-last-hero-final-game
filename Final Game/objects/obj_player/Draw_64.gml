@@ -27,29 +27,32 @@ draw_text(
     " / " +
     string(crystals_needed)
 );*/
-// KEY PROGRESS BAR
-// KEY PROGRESS BAR (SAFE)
 
-var max_keys = max(1, keys_needed); // prevents divide by 0
 
-// background
-draw_set_color(c_black);
-draw_rectangle(20, 200, 220, 220, false);
+// KEY PROGRESS BAR ONLY LEVEL 1 + LEVEL 2
 
-// clamp keys so bar never breaks
-var clamped_keys = clamp(keys_collected, 0, max_keys);
+if (room == Room1 || room == Room2)
+{
+    var max_keys = max(1, keys_needed);
 
-// fill
-var bar = (clamped_keys / max_keys) * 200;
+    draw_set_color(c_black);
+    draw_rectangle(20, 200, 220, 220, false);
 
-draw_set_color(c_yellow);
-draw_rectangle(20, 200, 20 + bar, 220, false);
+    var clamped_keys = clamp(keys_collected, 0, max_keys);
 
-// text
-draw_set_color(c_white);
-draw_text(20, 225,
-"Keys: " + string(clamped_keys) + " / " + string(max_keys));
-// LOW HP BLINK EFFECT
+    var bar = (clamped_keys / max_keys) * 200;
+
+    draw_set_color(c_yellow);
+    draw_rectangle(20, 200, 20 + bar, 220, false);
+
+    draw_set_color(c_white);
+
+    draw_text(
+        20,
+        225,
+        "Keys: " + string(clamped_keys) + " / " + string(max_keys)
+    );
+}
 
 if (hp <= 30)
 {
@@ -86,18 +89,14 @@ if (hp <= 30)
     draw_text(20, 185, "LOW HEALTH!");
 }
 
-// STAMINA BAR
-
-
-// background
+draw_set_color(c_black);
 draw_rectangle(20, 90, 220, 110, false);
 
-// fill
-draw_rectangle(20, 90, 20 + stamina * 2, 110, false);
+draw_set_color(c_aqua);
+draw_rectangle(20, 90, 20 + (stamina / stamina_max) * 200, 110, false);
 
-// text
+draw_set_color(c_white);
 draw_text(20, 115, "Stamina");
-
 
 // PLAYER STATS (top left)
 

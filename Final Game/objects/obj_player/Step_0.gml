@@ -1,8 +1,4 @@
-// Test platform 
-if (place_meeting(x, y + 1, obj_platform))
-{
-    y = y;
-}
+
 // Slimeenemy
 if (hit_cooldown > 0)
 {
@@ -98,7 +94,7 @@ if (room == Room3)
 		
             if (target != noone)
             {
-                var fb = instance_create_layer(x, y, "Instances", obj_fireball);
+                var fb = instance_create_layer(x, y, "Instances", obj_fireball_pickup);
 
                 fb.direction = point_direction(x, y, target.x, target.y);
                 fb.speed = 10;
@@ -140,8 +136,8 @@ if (room == Room2)
 
             if (sword_swings <= 0)
             {
-                has_sword = false;
-                sword_swings = 0;
+               
+                sword_swings = 10;
             }
         }
     }
@@ -153,6 +149,14 @@ if (room == Room2)
         room_goto(Room3);
     }
 }
+// Level3 Coins
+if (room == Room3)
+{
+	if (coin_count >= coins_needed)
+	{
+		room_goto(Room4);
+	}
+}
 if (room == Room1)
 {
     keys_needed = 3;
@@ -162,6 +166,11 @@ if (room == Room2)
 {
     keys_needed = 10;
 }
+if (room == Room3)
+{
+	coins_needed = 5;
+}
+
 // Level complete 
 if (room == Room2)
 {

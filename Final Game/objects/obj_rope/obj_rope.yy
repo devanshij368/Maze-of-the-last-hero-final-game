@@ -2,7 +2,10 @@
   "resourceType": "GMObject",
   "resourceVersion": "1.0",
   "name": "obj_rope",
-  "spriteId": null,
+  "spriteId": {
+    "name": "spr_rope",
+    "path": "sprites/spr_rope/spr_rope.yy",
+  },
   "solid": false,
   "visible": true,
   "managed": true,
@@ -22,8 +25,7 @@
   "physicsKinematic": false,
   "physicsShapePoints": [],
   "eventList": [
-    {"resourceType":"GMEvent","resourceVersion":"1.0","name":"","isDnD":false,"eventNum":0,"eventType":4,"collisionObjectId":{"name":"obj_player","path":"objects/obj_player/obj_player.yy",},},
-    {"resourceType":"GMEvent","resourceVersion":"1.0","name":"","isDnD":false,"eventNum":0,"eventType":8,"collisionObjectId":null,},
+    {"resourceType":"GMEvent","resourceVersion":"1.0","name":"","isDnD":false,"eventNum":0,"eventType":4,"collisionObjectId":{"name":"obj_player_platform","path":"objects/obj_player_platform/obj_player_platform.yy",},},
   ],
   "properties": [],
   "overriddenProperties": [],

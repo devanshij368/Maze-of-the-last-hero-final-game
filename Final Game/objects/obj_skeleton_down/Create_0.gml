@@ -1,9 +1,5 @@
-/// @description Insert description here
-// You can write your code in this editor
+move_speed = 1;
+chase_range = 120;
 
-move_speed = 2;
-
-
-
-
-
+hp = 40;
+max_hp = 40;
